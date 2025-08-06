@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Notion データベース一覧</title>
+</head>
+<body>
+    <h1>データベース: {{ database_id }}</h1>
+
+    <ul>
+    {% for result in data.results %}
+        <li>
+            <a href="{{ url_for('view_page', page_id=result.id) }}">
+                {{ result.title_text }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    {% if data.has_more %}
+        <a href="{{ url_for('view_database', database_id=database_id, cursor=data.next_cursor) }}">
+            次へ →
+        </a>
+    {% endif %}
+</body>
+</html>

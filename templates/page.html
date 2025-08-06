@@ -1,0 +1,10 @@
+<h2>ページID: {{ page.id }}</h2>
+
+<!-- ページの基本情報を表示 -->
+<p><strong>作成日:</strong> {{ page.created_time }}</p>
+
+<!-- テキストブロック追加フォーム -->
+<form method="post">
+  <label>テキスト追加: <input type="text" name="text"></label>
+  <button type="submit">追加</button>
+</form>
